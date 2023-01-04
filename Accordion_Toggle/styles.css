@@ -1,0 +1,71 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background-color: black;
+  color: whitesmoke;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.accordion {
+  width: 35%;
+  background-color: hsl(240, 6%, 7%);
+  padding: 30px;
+  border-radius: 30px;
+  box-shadow: 0 4px 8px 0 #8d878733, 0 6px 20px 0 #bbb5b530;
+}
+
+.accordion .accordion-title {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.accordion .content-container .question {
+  padding: 18px;
+  font-size: 1.4rem;
+  cursor: pointer;
+  border-bottom: 1px solid whitesmoke;
+  position: relative;
+}
+
+.accordion .content-container .question::after {
+  content: "+";
+  position: absolute;
+  right: -5px;
+}
+
+.accordion .content-container .answer {
+  padding-top: 15px;
+  font-size: 1.1rem;
+  line-height: 1.3;
+  width: 100%;
+
+  height: 0px;
+  overflow: hidden;
+  transition: 0.5s;
+}
+
+/* JS Styling Link */
+
+.accordion .content-container.active .answer {
+  height: 150px;
+}
+
+.accordion .content-container.active .question {
+  font-size: 18px;
+  transition: 0.5s;
+}
+
+.accordion .content-container.active .question::after {
+  content: "-";
+  font-size: 30px;
+  transition: 0.5s;
+}
